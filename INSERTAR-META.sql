@@ -13,12 +13,13 @@ CONTAINS SQL
 SQL SECURITY DEFINER
 COMMENT ''
 BEGIN
-set `@operacionExitosa` = 0;
+BEGIN
+	set `@operacionExitosa` = 0;
     
-    INSERT into metas (IdUsuario,)
+    INSERT into metas (IdMeta,IdUsuario,FechaInicio,FechaFin,MetaVentas,Activo,IdUsuarioAlta,FechaAlta)
 	 VALUES(
-	 
-	 ) 
+	 @IdMeta,@IdUsuario,@FechaInicio,@FechaFin,@MetaVentas,1,@IdUsuarioAlta,NOW()
+	 ) ;
     
     set `@operacionExitosa` = 1;
     
